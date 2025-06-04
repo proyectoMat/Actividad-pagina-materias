@@ -1,1 +1,219 @@
-hello world
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Cuartel del área técnica de informática</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #f0f0f0;
+    padding: 20px 40px 60px 40px;
+    position: relative;
+  }
+
+  /* Título parpadeante con varios colores */
+  @keyframes colorBlink {
+    0% {color: red;}
+    25% {color: orange;}
+    50% {color: green;}
+    75% {color: blue;}
+    100% {color: purple;}
+  }
+
+  h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+    animation: colorBlink 2s infinite;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  /* Logo en la esquina superior derecha */
+  .logo {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    z-index: 1000;
+  }
+
+  /* Lista de materias */
+  ul.materias {
+    list-style: none;
+    padding: 0;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  ul.materias > li {
+    position: relative;
+    padding: 12px 20px;
+    margin: 10px 0;
+    font-size: 1.2em;
+    color: white;
+    cursor: pointer;
+    border-radius: 6px;
+  }
+
+  /* Colores diferentes para cada materia */
+  ul.materias > li:nth-child(1) { background-color: #e74c3c; } /* rojo */
+  ul.materias > li:nth-child(2) { background-color: #3498db; } /* azul */
+  ul.materias > li:nth-child(3) { background-color: #27ae60; } /* verde */
+  ul.materias > li:nth-child(4) { background-color: #8e44ad; } /* morado */
+  ul.materias > li:nth-child(5) { background-color: #f39c12; } /* naranja */
+  ul.materias > li:nth-child(6) { background-color: #16a085; } /* verde azulado */
+
+  /* Submenú desplegable */
+  ul.submenu {
+    display: none;
+    position: absolute;
+    top: 45px;
+    left: 20px;
+    background: #fff;
+    border-radius: 6px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    z-index: 10;
+    width: 140px;
+  }
+
+  ul.submenu li {
+    color: #333;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    font-size: 1em;
+  }
+
+  ul.submenu li:last-child {
+    border-bottom: none;
+  }
+
+  ul.submenu li:hover {
+    background-color: #f0f0f0;
+    cursor: pointer;
+  }
+
+  /* Mostrar submenu al hacer hover en el padre */
+  ul.materias > li:hover > ul.submenu {
+    display: block;
+  }
+
+  /* Contenedor para cuadro de texto fuera de la lista */
+  #cuadro-texto {
+    max-width: 600px;
+    margin: 40px auto 0 auto;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.15);
+    padding: 20px;
+    display: none;
+  }
+
+  #cuadro-texto textarea {
+    width: 100%;
+    height: 150px;
+    font-size: 1.1em;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    resize: vertical;
+    box-sizing: border-box;
+  }
+
+  #cuadro-texto h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+  }
+</style>
+</head>
+<body>
+
+<h1>Cuartel del área técnica de informática</h1>
+
+<img class="logo" src="https://media.licdn.com/dms/image/v2/C4E0BAQFy7pf5Ts4cUg/company-logo_200_200/company-logo_200_200/0/1630628674903?e=2147483647&v=beta&t=c5SKStarLuofGPE7kqmuIPRwRHQvwQ75Dxh7zCKdpdA" alt="Logo Institución" />
+
+<ul class="materias">
+  <li style="background:#e74c3c;">
+    Soporte técnico
+    <ul class="submenu">
+      <li data-materia="Soporte técnico" data-trimestre="1">Trimestre 1</li>
+      <li data-materia="Soporte técnico" data-trimestre="2">Trimestre 2</li>
+      <li data-materia="Soporte técnico" data-trimestre="3">Trimestre 3</li>
+    </ul>
+  </li>
+  <li style="background:#3498db;">
+    Diseño web
+    <ul class="submenu">
+      <li data-materia="Diseño web" data-trimestre="1">Trimestre 1</li>
+      <li data-materia="Diseño web" data-trimestre="2">Trimestre 2</li>
+      <li data-materia="Diseño web" data-trimestre="3">Trimestre 3</li>
+    </ul>
+  </li>
+  <li style="background:#27ae60;">
+    Sistemas operativos y redes
+    <ul class="submenu">
+      <li data-materia="Sistemas operativos y redes" data-trimestre="1">Trimestre 1</li>
+      <li data-materia="Sistemas operativos y redes" data-trimestre="2">Trimestre 2</li>
+      <li data-materia="Sistemas operativos y redes" data-trimestre="3">Trimestre 3</li>
+    </ul>
+  </li>
+  <li style="background:#8e44ad;">
+    Programación y base de datos
+    <ul class="submenu">
+      <li data-materia="Programación y base de datos" data-trimestre="1">Trimestre 1</li>
+      <li data-materia="Programación y base de datos" data-trimestre="2">Trimestre 2</li>
+      <li data-materia="Programación y base de datos" data-trimestre="3">Trimestre 3</li>
+    </ul>
+  </li>
+  <li style="background:#f39c12;">
+    Aplicaciones ofimáticas locales y en línea
+    <ul class="submenu">
+      <li data-materia="Aplicaciones ofimáticas locales y en línea" data-trimestre="1">Trimestre 1</li>
+      <li data-materia="Aplicaciones ofimáticas locales y en línea" data-trimestre="2">Trimestre 2</li>
+      <li data-materia="Aplicaciones ofimáticas locales y en línea" data-trimestre="3">Trimestre 3</li>
+    </ul>
+  </li>
+  <li style="background:#16a085;">
+    FOL
+    <ul class="submenu">
+      <li data-materia="FOL" data-trimestre="1">Trimestre 1</li>
+      <li data-materia="FOL" data-trimestre="2">Trimestre 2</li>
+      <li data-materia="FOL" data-trimestre="3">Trimestre 3</li>
+    </ul>
+  </li>
+</ul>
+
+<!-- Cuadro de texto independiente -->
+<div id="cuadro-texto">
+  <h3 id="titulo-cuadro"></h3>
+  <textarea placeholder="Escribe aquí..."></textarea>
+</div>
+
+<script>
+  const cuadroTexto = document.getElementById('cuadro-texto');
+  const tituloCuadro = document.getElementById('titulo-cuadro');
+  const textarea = cuadroTexto.querySelector('textarea');
+
+  // Al hacer click en un trimestre, actualizar y mostrar cuadro de texto
+  document.querySelectorAll('.submenu li').forEach(item => {
+    item.addEventListener('click', e => {
+      e.stopPropagation();
+
+      const materia = e.target.getAttribute('data-materia');
+      const trimestre = e.target.getAttribute('data-trimestre');
+
+      // Mostrar el cuadro de texto con el título actualizado
+      tituloCuadro.textContent = `${materia} - Trimestre ${trimestre}`;
+      textarea.placeholder = `Ingresa texto para ${materia} - Trimestre ${trimestre}`;
+      textarea.value = ''; // opcional, limpia el cuadro al cambiar
+
+      cuadroTexto.style.display = 'block';
+      textarea.focus();
+    });
+  });
+</script>
+
+</body>
+</html>
