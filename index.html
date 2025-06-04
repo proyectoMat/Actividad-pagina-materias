@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Cuartel del área técnica de informática</title>
+<title>Proyecto área técnica de informática</title>
 <style>
   body {
     font-family: Arial, sans-serif;
@@ -130,7 +130,7 @@
 </head>
 <body>
 
-<h1>Cuartel del área técnica de informática</h1>
+<h1>Proyecto del área técnica de informática</h1>
 
 <img class="logo" src="https://media.licdn.com/dms/image/v2/C4E0BAQFy7pf5Ts4cUg/company-logo_200_200/company-logo_200_200/0/1630628674903?e=2147483647&v=beta&t=c5SKStarLuofGPE7kqmuIPRwRHQvwQ75Dxh7zCKdpdA" alt="Logo Institución" />
 
@@ -196,7 +196,7 @@
   const tituloCuadro = document.getElementById('titulo-cuadro');
   const textarea = cuadroTexto.querySelector('textarea');
 
-  // Al hacer click en un trimestre, actualizar y mostrar cuadro de texto
+  // Al hacer click en un trimestre, actualizar y mostrar cuadro de texto o redirigir si es Diseño web - Trimestre 1
   document.querySelectorAll('.submenu li').forEach(item => {
     item.addEventListener('click', e => {
       e.stopPropagation();
@@ -204,7 +204,11 @@
       const materia = e.target.getAttribute('data-materia');
       const trimestre = e.target.getAttribute('data-trimestre');
 
-      // Mostrar el cuadro de texto con el título actualizado
+      if(materia === 'Diseño web' && trimestre === '1') {
+        window.location.href = 'file:///E:/programacion%20actividades/1%20trimestre.html';
+        return;
+      }
+
       tituloCuadro.textContent = `${materia} - Trimestre ${trimestre}`;
       textarea.placeholder = `Ingresa texto para ${materia} - Trimestre ${trimestre}`;
       textarea.value = ''; // opcional, limpia el cuadro al cambiar
