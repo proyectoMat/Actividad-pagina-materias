@@ -12,7 +12,6 @@
     position: relative;
   }
 
-  /* Título parpadeante con varios colores */
   @keyframes colorBlink {
     0% {color: red;}
     25% {color: orange;}
@@ -29,7 +28,6 @@
     margin-bottom: 30px;
   }
 
-  /* Logo en la esquina superior derecha */
   .logo {
     position: fixed;
     top: 10px;
@@ -40,12 +38,12 @@
     z-index: 1000;
   }
 
-  /* Lista de materias */
+  /* Lista de materias alineada a la izquierda */
   ul.materias {
     list-style: none;
     padding: 0;
     max-width: 400px;
-    margin: 0 auto;
+    margin: 0; /* Eliminado el centrado automático */
   }
 
   ul.materias > li {
@@ -58,15 +56,13 @@
     border-radius: 6px;
   }
 
-  /* Colores diferentes para cada materia */
-  ul.materias > li:nth-child(1) { background-color: #e74c3c; } /* rojo */
-  ul.materias > li:nth-child(2) { background-color: #3498db; } /* azul */
-  ul.materias > li:nth-child(3) { background-color: #27ae60; } /* verde */
-  ul.materias > li:nth-child(4) { background-color: #8e44ad; } /* morado */
-  ul.materias > li:nth-child(5) { background-color: #f39c12; } /* naranja */
-  ul.materias > li:nth-child(6) { background-color: #16a085; } /* verde azulado */
+  ul.materias > li:nth-child(1) { background-color: #e74c3c; }
+  ul.materias > li:nth-child(2) { background-color: #3498db; }
+  ul.materias > li:nth-child(3) { background-color: #27ae60; }
+  ul.materias > li:nth-child(4) { background-color: #8e44ad; }
+  ul.materias > li:nth-child(5) { background-color: #f39c12; }
+  ul.materias > li:nth-child(6) { background-color: #16a085; }
 
-  /* Submenú desplegable */
   ul.submenu {
     display: none;
     position: absolute;
@@ -95,12 +91,10 @@
     cursor: pointer;
   }
 
-  /* Mostrar submenu al hacer hover en el padre */
   ul.materias > li:hover > ul.submenu {
     display: block;
   }
 
-  /* Contenedor para cuadro de texto fuera de la lista */
   #cuadro-texto {
     max-width: 600px;
     margin: 40px auto 0 auto;
@@ -185,7 +179,6 @@
   </li>
 </ul>
 
-<!-- Cuadro de texto independiente -->
 <div id="cuadro-texto">
   <h3 id="titulo-cuadro"></h3>
   <textarea placeholder="Escribe aquí..."></textarea>
@@ -196,7 +189,6 @@
   const tituloCuadro = document.getElementById('titulo-cuadro');
   const textarea = cuadroTexto.querySelector('textarea');
 
-  // Al hacer click en un trimestre, actualizar y mostrar cuadro de texto o redirigir si es Diseño web - Trimestre 1
   document.querySelectorAll('.submenu li').forEach(item => {
     item.addEventListener('click', e => {
       e.stopPropagation();
@@ -211,7 +203,7 @@
 
       tituloCuadro.textContent = `${materia} - Trimestre ${trimestre}`;
       textarea.placeholder = `Ingresa texto para ${materia} - Trimestre ${trimestre}`;
-      textarea.value = ''; // opcional, limpia el cuadro al cambiar
+      textarea.value = '';
 
       cuadroTexto.style.display = 'block';
       textarea.focus();
