@@ -6,49 +6,49 @@
 <title>Proyecto área técnica de informática</title>
 <style>
   body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Slightly more modern font */
-    background: linear-gradient(to right, #ece9e6, #ffffff); /* Subtle gradient background */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #e1e1e1; /* Changed to solid background color */
     padding: 20px 40px;
     position: relative;
-    min-height: 100vh; /* Ensures footer stays at bottom */
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center content horizontally */
+    align-items: center;
   }
 
   @keyframes colorBlink {
-    0% {color: #e74c3c;} /* Red */
-    25% {color: #f39c12;} /* Orange */
-    50% {color: #27ae60;} /* Green */
-    75% {color: #3498db;} /* Blue */
-    100% {color: #8e44ad;} /* Purple */
+    0% {color: #e74c3c;}
+    25% {color: #f39c12;}
+    50% {color: #27ae60;}
+    75% {color: #3498db;}
+    100% {color: #8e44ad;}
   }
 
-  .title-box { /* New style for the title container */
-    background-color: #f8f8f8; /* A light background for the box */
-    border-radius: 12px; /* Rounded corners */
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1); /* Soft shadow */
-    padding: 25px 40px; /* Internal spacing */
-    margin-bottom: 50px; /* Space below the title box */
-    width: fit-content; /* Adjust width to content */
-    max-width: 90%; /* Max width for responsiveness */
+  .title-box {
+    background-color: #f8f8f8;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    padding: 25px 40px;
+    margin-bottom: 50px;
+    width: fit-content;
+    max-width: 90%;
     text-align: center;
   }
 
   h1 {
-    font-size: 3em; /* Slightly larger title */
+    font-size: 3em;
     font-weight: bold;
-    animation: colorBlink 3s infinite alternate; /* Slower and alternates */
+    animation: colorBlink 3s infinite alternate;
     text-align: center;
-    margin: 0; /* Remove default h1 margin inside the box */
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.1); /* Subtle text shadow */
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
   }
 
   .logo {
-    position: absolute; /* Changed from fixed for better responsiveness */
+    position: absolute;
     top: 20px;
     right: 20px;
-    width: 100px; /* Slightly larger logo */
+    width: 100px;
     height: 100px;
     object-fit: contain;
     z-index: 1000;
@@ -56,16 +56,15 @@
 
   .main-content-wrapper {
     display: flex;
-    flex-wrap: wrap; /* Allows wrapping for smaller screens */
-    gap: 40px; /* Space between the list and the text box */
-    justify-content: center; /* Center content when wrapped */
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
     width: 100%;
-    max-width: 1200px; /* Max width for content area */
+    max-width: 1200px;
     margin-top: 20px;
-    flex-grow: 1; /* Allows this wrapper to take up available space */
+    flex-grow: 1;
   }
 
-  /* Lista de materias alineada a la izquierda */
   ul.materias {
     list-style: none;
     padding: 0;
@@ -75,47 +74,47 @@
 
   ul.materias > li {
     position: relative;
-    padding: 15px 25px; /* Increased padding */
-    margin: 12px 0; /* Increased margin */
-    font-size: 1.3em; /* Slightly larger font */
+    padding: 15px 25px;
+    margin: 12px 0;
+    font-size: 1.3em;
     color: white;
     cursor: pointer;
-    border-radius: 8px; /* Slightly more rounded corners */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15); /* Added box shadow */
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Smooth transition for hover */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
   }
 
   ul.materias > li:hover {
-    transform: translateY(-3px); /* Lifts the card on hover */
-    box-shadow: 0 6px 12px rgba(0,0,0,0.25); /* More pronounced shadow on hover */
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.25);
   }
 
-  ul.materias > li:nth-child(1) { background-color: #e74c3c; } /* Red */
-  ul.materias > li:nth-child(2) { background-color: #3498db; } /* Blue */
-  ul.materias > li:nth-child(3) { background-color: #27ae60; } /* Green */
-  ul.materias > li:nth-child(4) { background-color: #8e44ad; } /* Purple */
-  ul.materias > li:nth-child(5) { background-color: #f39c12; } /* Orange */
-  ul.materias > li:nth-child(6) { background-color: #16a085; } /* Teal */
+  ul.materias > li:nth-child(1) { background-color: #e74c3c; }
+  ul.materias > li:nth-child(2) { background-color: #3498db; }
+  ul.materias > li:nth-child(3) { background-color: #27ae60; }
+  ul.materias > li:nth-child(4) { background-color: #8e44ad; }
+  ul.materias > li:nth-child(5) { background-color: #f39c12; }
+  ul.materias > li:nth-child(6) { background-color: #16a085; }
 
   ul.submenu {
     display: none;
     position: absolute;
-    top: 0; /* Aligns with the top of the parent li */
-    left: calc(100% + 15px); /* Positions to the right of the parent li with some spacing */
+    top: 0;
+    left: calc(100% + 15px);
     background: #fff;
     border-radius: 6px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* More prominent shadow for submenu */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     z-index: 10;
-    min-width: 150px; /* Increased width for submenu */
-    padding: 5px 0; /* Added padding for submenu items */
+    min-width: 150px;
+    padding: 5px 0;
   }
 
   ul.submenu li {
     color: #333;
-    padding: 10px 15px; /* Increased padding for submenu items */
-    border-bottom: 1px solid #eee; /* Lighter border */
-    font-size: 1.1em; /* Slightly larger font */
-    white-space: nowrap; /* Prevent text wrapping */
+    padding: 10px 15px;
+    border-bottom: 1px solid #eee;
+    font-size: 1.1em;
+    white-space: nowrap;
   }
 
   ul.submenu li:last-child {
@@ -123,7 +122,7 @@
   }
 
   ul.submenu li:hover {
-    background-color: #f5f5f5; /* Lighter hover background */
+    background-color: #f5f5f5;
     cursor: pointer;
   }
 
@@ -132,42 +131,42 @@
   }
 
   #cuadro-texto {
-    flex: 1; /* Allows text box to grow and shrink */
-    min-width: 400px; /* Minimum width for the text box */
+    flex: 1;
+    min-width: 400px;
     background: white;
-    border-radius: 12px; /* More rounded corners */
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1); /* Softer, larger shadow */
-    padding: 30px; /* Increased padding */
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    padding: 30px;
     display: none;
   }
 
   #cuadro-texto textarea {
     width: 100%;
-    height: 200px; /* Taller text area */
+    height: 200px;
     font-size: 1.1em;
-    padding: 15px; /* Increased padding */
+    padding: 15px;
     border-radius: 8px;
-    border: 1px solid #dcdcdc; /* Lighter border */
+    border: 1px solid #dcdcdc;
     resize: vertical;
     box-sizing: border-box;
-    transition: border-color 0.2s ease-in-out; /* Smooth transition for border focus */
+    transition: border-color 0.2s ease-in-out;
   }
 
   #cuadro-texto textarea:focus {
     outline: none;
-    border-color: #3498db; /* Blue border on focus */
-    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5); /* Subtle blue shadow on focus */
+    border-color: #3498db;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
   }
 
   #cuadro-texto h3 {
     margin-top: 0;
-    margin-bottom: 20px; /* More space below title */
+    margin-bottom: 20px;
     color: #333;
-    font-size: 1.8em; /* Larger heading */
+    font-size: 1.8em;
   }
 
   footer {
-    margin-top: 60px; /* Space above footer */
+    margin-top: 60px;
     padding-top: 20px;
     border-top: 1px solid #ccc;
     text-align: center;
@@ -178,7 +177,7 @@
 
   @media (max-width: 768px) {
     .title-box {
-      margin-bottom: 30px; /* Adjust margin for smaller screens */
+      margin-bottom: 30px;
       padding: 15px 25px;
     }
 
@@ -192,13 +191,13 @@
     }
 
     ul.materias {
-      max-width: 100%; /* Allow full width on small screens */
+      max-width: 100%;
     }
 
     ul.submenu {
-      position: static; /* Stack submenu below on small screens */
-      margin-left: 20px; /* Indent submenu */
-      box-shadow: none; /* Remove shadow when stacked */
+      position: static;
+      margin-left: 20px;
+      box-shadow: none;
       border: none;
       background: none;
       padding: 0;
@@ -207,23 +206,23 @@
     ul.submenu li {
       padding: 5px 10px;
       color: #555;
-      border-bottom: none; /* Remove borders when stacked */
+      border-bottom: none;
     }
 
     ul.materias > li:hover > ul.submenu {
-      display: block; /* Still show on hover */
+      display: block;
     }
 
     .logo {
-      position: static; /* Stacks logo with content */
+      position: static;
       margin-bottom: 20px;
       width: 80px;
       height: 80px;
     }
 
     #cuadro-texto {
-      min-width: unset; /* Remove min-width */
-      width: 90%; /* Adjust width for small screens */
+      min-width: unset;
+      width: 90%;
       padding: 20px;
     }
   }
